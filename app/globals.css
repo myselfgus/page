@@ -1,0 +1,479 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Definições de cores e tema para VINTRA (Modo Escuro Otimizado) */
+  :root {
+    /* Light mode variables */
+    --background: 0 0% 100%;
+    --foreground: 224 71.4% 4.1%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 210 20% 98%;
+
+    --secondary: 220 13% 91%;
+    --secondary-foreground: 220 9% 37%;
+
+    --muted: 220 13% 91%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 220 13% 91%;
+    --accent-foreground: 220 9% 37%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.5rem;
+
+    /* Brand colors for light mode */
+    --brand-primary: 217 91% 60%;
+    --brand-primary-foreground: 210 20% 98%;
+    --brand-primary-hover: 217 91% 70%;
+
+    --brand-secondary: 173 90% 36%;
+    --brand-secondary-foreground: 210 20% 98%;
+    --brand-secondary-hover: 173 80% 42%;
+
+    /* Fontes */
+    --font-sans: "Inter", sans-serif;
+    /* --font-mono: "Roboto Mono", monospace; */
+
+    /* Cores dimensionais primárias (mantidas para compatibilidade) */
+    --color-emotional-dark: #1e3a8a;
+    --color-emotional-light: #3b82f6;
+    --color-cognitive-dark: #065f46;
+    --color-cognitive-light: #10b981;
+    --color-autonomy-dark: #7e1d5f;
+    --color-autonomy-light: #ec4899;
+
+    /* Cores de acento */
+    --color-critical: #f59e0b;
+
+    /* Neutros */
+    --color-white: #ffffff;
+    --color-pearl: #f8fafc;
+    --color-gray-light: #e2e8f0;
+    --color-gray-medium: #64748b;
+    --color-gray-dark: #1e293b;
+    --color-black: #0f172a;
+
+    /* Animações */
+    --anim--hover-time: 0.3s;
+    --anim--hover-ease: cubic-bezier(0.215, 0.61, 0.355, 1.0);
+  }
+
+  .dark {
+    /* Dark mode variables with improved contrast */
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+
+    --card: 224 71.4% 5.1%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 210 20% 98%;
+
+    --secondary: 215 20% 25%;
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 215 28% 17%;
+    --muted-foreground: 215 20% 75%;
+
+    --accent: 215 28% 17%;
+    --accent-foreground: 210 20% 98%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 215 20% 25%;
+    --input: 215 28% 17%;
+    --ring: 217 80% 65%;
+
+    /* Brand colors for dark mode with improved visibility */
+    --brand-primary: 217 91% 65%;
+    --brand-primary-foreground: 210 20% 98%;
+    --brand-primary-hover: 217 80% 75%;
+
+    --brand-secondary: 173 80% 45%;
+    --brand-secondary-foreground: 210 20% 98%;
+    --brand-secondary-hover: 173 70% 55%;
+  }
+}
+
+/* Otimizações para mobile */
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+  touch-action: manipulation;
+  -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Prevenir layout shifts */
+* {
+  max-height: 100000px;
+}
+
+/* Melhorar performance de animações */
+@media (max-width: 768px) {
+  * {
+    will-change: auto !important;
+  }
+
+  .animate-bounce {
+    animation: none !important;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border; /* Aplica a cor de borda padrão a todos os elementos */
+  }
+  body {
+    @apply bg-background text-foreground font-body text-base leading-relaxed;
+    font-feature-settings: "rlig" 1, "calt" 1; /* Ligaturas opcionais e alternativas contextuais */
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h5,
+  h6 {
+    @apply font-primary font-semibold leading-tight mb-4;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl tracking-tight;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl tracking-tight;
+  }
+
+  h3 {
+    @apply text-2xl;
+  }
+
+  h4 {
+    @apply text-xl;
+  }
+
+  p {
+    @apply mb-4;
+  }
+}
+
+/* Estilos adicionais para scrollbar (opcional, mas melhora a estética em temas escuros) */
+/* Para Webkit (Chrome, Safari, Edge novo) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background) / 0.5); /* Fundo da trilha da scrollbar */
+  border-radius: var(--radius);
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted)); /* Cor do polegar da scrollbar */
+  border-radius: var(--radius);
+  border: 2px solid hsl(var(--background) / 0.5); /* Borda para dar espaço da trilha */
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--secondary)); /* Cor do polegar ao passar o mouse */
+}
+/* Para Firefox (mais limitado) */
+/* body {
+  scrollbar-width: thin; 
+  scrollbar-color: hsl(var(--muted)) hsl(var(--background) / 0.5); 
+} */
+
+@layer components {
+  .section {
+    @apply py-12 md:py-24;
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 md:px-6;
+  }
+
+  .section-header {
+    @apply text-center mb-12 md:mb-24;
+  }
+
+  .section-divider {
+    @apply h-1 w-20 mx-auto my-4 bg-gradient-to-r from-brand-primary via-brand-secondary to-primary rounded-full;
+  }
+
+  .btn {
+    @apply inline-block px-4 py-2 rounded-md font-medium text-base text-center cursor-pointer transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply bg-brand-primary text-brand-primary-foreground hover:bg-brand-primary-hover hover:-translate-y-0.5 shadow-glow-primary-sm;
+  }
+
+  .btn-outline {
+    @apply bg-transparent border-2 border-muted text-foreground hover:border-brand-primary hover:text-brand-primary hover:-translate-y-0.5;
+  }
+}
+
+/* Animation Keyframes */
+@keyframes scrollDown {
+  0% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(245, 158, 11, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
+  }
+}
+
+/* Glass Button Styles */
+/* Button Wrap Container */
+.buttonWrap {
+  position: relative;
+  z-index: 2;
+  border-radius: 999vw;
+  background: transparent;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1.0);
+}
+
+/* Button Shadow Container */
+.buttonShadow {
+  --shadow-cuttoff-fix: 2em;
+  position: absolute;
+  width: calc(100% + var(--shadow-cuttoff-fix));
+  height: calc(100% + var(--shadow-cuttoff-fix));
+  top: calc(0% - var(--shadow-cuttoff-fix) / 2);
+  left: calc(0% - var(--shadow-cuttoff-fix) / 2);
+  filter: blur(clamp(2px, 0.125em, 12px));
+  -webkit-filter: blur(clamp(2px, 0.125em, 12px));
+  overflow: visible;
+  pointer-events: none;
+}
+
+/* Shadow */
+.buttonShadow::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  border-radius: 999vw;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1));
+  width: calc(100% - var(--shadow-cuttoff-fix) - 0.25em);
+  height: calc(100% - var(--shadow-cuttoff-fix) - 0.25em);
+  top: calc(var(--shadow-cuttoff-fix) - 0.5em);
+  left: calc(var(--shadow-cuttoff-fix) - 0.875em);
+  padding: 0.125em;
+  box-sizing: border-box;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1.0);
+  overflow: visible;
+  opacity: 1;
+}
+
+/* Button Base Styles */
+.glassButton {
+  --border-width: clamp(1px, 0.0625em, 4px);
+  --angle-1: 0deg;
+  --angle-2: -45deg;
+  all: unset;
+  cursor: pointer;
+  position: relative;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  pointer-events: auto;
+  z-index: 3;
+  background: linear-gradient(-75deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+  border-radius: 999vw;
+  box-shadow:
+    inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
+    inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
+    0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
+    0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2),
+    0 0 0 0 rgba(255, 255, 255, 1);
+  backdrop-filter: blur(clamp(1px, 0.125em, 4px));
+  -webkit-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
+  transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1.0);
+}
+
+.glassButton:hover {
+  transform: scale(0.975);
+  backdrop-filter: blur(0.01em);
+  -webkit-backdrop-filter: blur(0.01em);
+  box-shadow:
+    inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
+    inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
+    0 0.15em 0.05em -0.1em rgba(0, 0, 0, 0.25),
+    0 0 0.05em 0.1em inset rgba(255, 255, 255, 0.5),
+    0 0 0 0 rgba(255, 255, 255, 1);
+}
+
+/* Button Text */
+.glassButton span {
+  position: relative;
+  display: block;
+  user-select: none;
+  -webkit-user-select: none;
+  font-family: var(--font-sans);
+  letter-spacing: -0.05em;
+  font-weight: 500;
+  font-size: 1em;
+  color: rgba(255, 255, 255, 0.9);
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 0em 0.25em 0.05em rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1.0);
+  padding-inline: 1.5em;
+  padding-block: 0.875em;
+}
+
+.glassButton:hover span {
+  text-shadow: 0.025em 0.025em 0.025em rgba(0, 0, 0, 0.12);
+}
+
+/* Text Shine Effect */
+.glassButton span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 1;
+  width: calc(100% - var(--border-width)); /* Prevent overlapping border */
+  height: calc(100% - var(--border-width));
+  top: calc(0% + var(--border-width) / 2);
+  left: calc(0% + var(--border-width) / 2);
+  box-sizing: border-box;
+  border-radius: 999vw;
+  overflow: clip;
+  background: linear-gradient(
+    var(--angle-2),
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5) 40% 50%,
+    rgba(255, 255, 255, 0) 55%
+  );
+  z-index: 3;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+  background-repeat: no-repeat;
+  transition: background-position 0.4s cubic-bezier(0.215, 0.61, 0.355, 1.0);
+}
+
+.glassButton:hover span::after {
+  background-position: 25% 50%;
+}
+
+.glassButton:active span::after {
+  background-position: 50% 15%;
+  --angle-2: -15deg;
+}
+
+/* Button Outline */
+.glassButton::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  border-radius: 999vw;
+  width: calc(100% + var(--border-width));
+  height: calc(100% + var(--border-width));
+  top: calc(0% - var(--border-width) / 2);
+  left: calc(0% - var(--border-width) / 2);
+  padding: var(--border-width);
+  box-sizing: border-box;
+  background: conic-gradient(
+      from var(--angle-1) at 50% 50%,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0) 5% 40%,
+      rgba(0, 0, 0, 0.5) 50%,
+      rgba(0, 0, 0, 0) 60% 95%,
+      rgba(0, 0, 0, 0.5)
+    ), linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1.0);
+  box-shadow: inset 0 0 0 calc(var(--border-width) / 2) rgba(255, 255, 255, 0.5);
+}
+
+.glassButton:hover::after {
+  --angle-1: -125deg;
+}
+
+.glassButton:active::after {
+  --angle-1: -75deg;
+}
+
+/* Header Glass Card Styles */
+.glass-header {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: linear-gradient(90deg, rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.9));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.glass-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+  z-index: 1;
+}
+
+/* Glass Modal */
+.glass-modal {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.glass-modal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  z-index: 1;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
