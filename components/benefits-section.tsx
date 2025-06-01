@@ -128,9 +128,10 @@ export default function BenefitsSection() {
                             <div className="absolute w-4 h-0.5 bg-critical top-[40%] left-1/2 -translate-x-1/2 shadow-[0_-6px_0_var(--color-critical),0_6px_0_var(--color-critical)]"></div>
                           </div>
                         </div>
-                        <h3 className="text-xl mb-2">Documentação Rica</h3>
+                        <h3 className="text-xl mb-2">Documentação Automatizada</h3>
                         <p className="text-[15px] text-gray-medium mb-0">
-                          Registro Clínico Dimensional (RCD) que integra dados quantitativos e narrativa qualitativa.
+                          Até 90&nbsp;% do prontuário gerado automaticamente pelo Registro Clínico Dimensional (RCD),
+                          reduzindo burocracia e aumentando a acurácia.
                         </p>
                       </motion.div>
                     </div>

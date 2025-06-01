@@ -37,11 +37,21 @@ export default function HeroSection() {
             initial={false}
             animate={isLoaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: isMobile ? 0.2 : 0.5, delay: isMobile ? 0.1 : 0.2 }}
-            className="text-lg md:text-xl text-gray-light mb-8 max-w-3xl mx-auto"
+            className="text-lg md:text-xl text-gray-light mb-6 max-w-3xl mx-auto"
           >
-            Uma revolução dimensional na compreensão da experiência humana. Nossa abordagem dimensional-vetorial oferece
-            um novo paradigma que honra a complexidade da experiência humana, permitindo avaliações mais precisas e
-            tratamentos personalizados.
+            Automatizamos até <span className="font-semibold text-emotional-light">90&nbsp;% da documentação clínica</span>
+            em saúde mental, liberando o profissional para o que realmente importa&nbsp;— o vínculo terapêutico. Com
+            inteligência dimensional-vetorial, elevamos a acurácia dos registros, reduzimos custos operacionais e
+            ampliamos o acesso de pacientes a&nbsp;um cuidado de excelência.
+          </motion.p>
+
+          <motion.p
+            initial={false}
+            animate={isLoaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: isMobile ? 0.2 : 0.5, delay: isMobile ? 0.15 : 0.3 }}
+            className="text-sm md:text-base text-gray-light/80 mb-8 max-w-2xl mx-auto"
+          >
+            Mais tempo para o médico. Mais cuidado para o paciente. Mais valor para o sistema.
           </motion.p>
 
           <motion.div

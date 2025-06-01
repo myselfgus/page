@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/components/ui/sonner"
 import MSPartnershipBanner from "@/components/ms-partnership-banner"
 import ScrollToTop from "@/components/scroll-to-top"
+import ChatBot from "@/components/chat-bot"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -139,6 +140,7 @@ export default function RootLayout({
             <Toaster richColors position="top-right" />
             <ScrollToTop />
             {children}
+            <ChatBot />
           </div>
         </ThemeProvider>
       </body>

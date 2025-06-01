@@ -2,6 +2,7 @@ import Header from "@/components/header"
 import HeroSection from "@/components/hero-section"
 import AboutSection from "@/components/about-section"
 import ApproachSection from "@/components/approach-section"
+import EconomicImpactSection from "@/components/economic-impact-section"
 import BenefitsSection from "@/components/benefits-section"
 import ContactSection from "@/components/contact-section"
 import FAQSection from "@/components/faq-section"
@@ -40,19 +41,22 @@ export default function Home() {
         {/* 2. Microsoft Recognition Section: Validação e Credibilidade Logo de Início */}
         <MSRecognitionSection />
 
-        {/* 3. About Section: Quem Somos e Nossa Missão Detalhada */}
+        {/* 3. About / Founders Hub Section */}
         <AboutSection />
 
-        {/* 4. Approach Section: Nossa Metodologia Única e Inovadora */}
+        {/* 4. Impacto Econômico e de Tempo */}
+        <EconomicImpactSection />
+
+        {/* 5. Approach Section: Nossa Metodologia Única e Inovadora */}
         <ApproachSection />
 
-        {/* 5. Benefits Section: Valor Claro e Tangível para o Cliente/Usuário */}
+        {/* 6. Benefits Section: Impacto Clínico para Médico, Paciente e Sistema */}
         <BenefitsSection />
 
-        {/* 6. FAQ Section: Antecipar Dúvidas e Fornecer Respostas Claras */}
+        {/* 7. FAQ Section: Antecipar Dúvidas e Fornecer Respostas Claras */}
         <FAQSection />
 
-        {/* 7. Contact Section: Chamada para Ação Final e Facilidade de Contato */}
+        {/* 8. Contact Section: Chamada para Ação Final e Facilidade de Contato */}
         <ContactSection />
       </main>
 
