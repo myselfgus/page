@@ -1,23 +1,21 @@
 import Header from "@/components/header"
 import HeroSection from "@/components/hero-section"
-import AboutSection from "@/components/about-section"
-import ApproachSection from "@/components/approach-section"
+import DemoSection from "@/components/demo-section"
+import MSRecognitionSection from "@/components/ms-recognition-section"
 import EconomicImpactSection from "@/components/economic-impact-section"
-import BenefitsSection from "@/components/benefits-section"
-import ContactSection from "@/components/contact-section"
-import FAQSection from "@/components/faq-section"
+import AboutSection from "@/components/about-section"
+import ContactFAQSection from "@/components/contact-faq-section"
 import Footer from "@/components/footer"
 import MobileNavigation from "@/components/mobile-navigation"
 import MSPartnershipBadge from "@/components/ms-partnership-badge"
-import MSRecognitionSection from "@/components/ms-recognition-section"
 
 // JSON-LD para a página inicial
 const HomePageJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  name: "HEALTH/HEALTH - Reimaginando a Saúde Mental",
+  name: "HEALTH/HEALTH - A IA que Humaniza a Saúde Mental",
   description:
-    "Uma revolução dimensional na compreensão da experiência humana. Nossa abordagem dimensional-vetorial oferece um novo paradigma para a saúde mental.",
+    "Inteligência dimensional-vetorial que compreende pacientes como médicos. Automatizamos 90% da documentação clínica, liberando tempo para o vínculo terapêutico.",
   url: "https://www.healthhealth.com",
   mainEntity: {
     "@type": "Organization",
@@ -38,26 +36,20 @@ export default function Home() {
         {/* 1. Hero Section: Impacto Imediato */}
         <HeroSection />
 
-        {/* 2. Microsoft Recognition Section: Validação e Credibilidade Logo de Início */}
+        {/* 2. Demo Section: Experiência Interativa */}
+        <DemoSection />
+
+        {/* 3. Microsoft Recognition Section: Validação e Credibilidade */}
         <MSRecognitionSection />
 
-        {/* 3. About / Founders Hub Section */}
-        <AboutSection />
-
-        {/* 4. Impacto Econômico e de Tempo */}
+        {/* 4. Impacto Econômico, Segurança e Privacidade */}
         <EconomicImpactSection />
 
-        {/* 5. Approach Section: Nossa Metodologia Única e Inovadora */}
-        <ApproachSection />
+        {/* 5. About / Founders Hub Section */}
+        <AboutSection />
 
-        {/* 6. Benefits Section: Impacto Clínico para Médico, Paciente e Sistema */}
-        <BenefitsSection />
-
-        {/* 7. FAQ Section: Antecipar Dúvidas e Fornecer Respostas Claras */}
-        <FAQSection />
-
-        {/* 8. Contact Section: Chamada para Ação Final e Facilidade de Contato */}
-        <ContactSection />
+        {/* 6. Contact & FAQ Section: Combinados para simplificar */}
+        <ContactFAQSection />
       </main>
 
       <Footer />

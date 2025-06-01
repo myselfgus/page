@@ -3,8 +3,6 @@
 import { useState, useEffect } from "react"
 import { usePathname } from "next/navigation"
 import Link from "next/link"
-import LanguageSwitcher from "./language-switcher"
-import { ThemeToggle } from "./theme-toggle"
 import { scrollToSection } from "@/utils/enhanced-smooth-scroll"
 import { useIsMobile } from "@/hooks/use-mobile"
 
@@ -14,7 +12,7 @@ export default function Header() {
   const pathname = usePathname()
   const isMobile = useIsMobile()
 
-  const sections = ["home", "about", "approach", "visualization", "benefits", "contact"]
+  const sections = ["home", "demo", "economic-impact", "contact"]
 
   const handleScroll = () => {
     setScrolled(window.scrollY > 50)
@@ -50,7 +48,9 @@ export default function Header() {
   return (
     <header
       className={`fixed left-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "py-2 bg-background/80 backdrop-blur-lg shadow-lg border-b border-border" : "py-4 bg-transparent"
+        scrolled
+          ? "py-2 bg-black/30 dark:bg-slate-900/40 backdrop-blur-md shadow-lg border-b border-white/10"
+          : "py-4 bg-transparent"
       }`}
       style={{
         top: "var(--banner-height, 0)",
@@ -60,9 +60,6 @@ export default function Header() {
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
         <div className="flex items-center">
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-9 h-9 bg-white clip-triangle flex justify-center items-center transform rotate-180 mr-2 relative">
-              <div className="w-[70%] h-[70%] absolute bg-repeat-y bg-[length:100%_10px] bg-[linear-gradient(to_bottom,#0f172a,#0f172a_2px,transparent_2px,transparent_8px)]"></div>
-            </div>
             <span className="font-primary font-bold text-xl tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-brand-primary via-brand-secondary to-purple-500 hover:opacity-90 transition-opacity">
               HEALTH/HEALTH
             </span>
@@ -76,8 +73,8 @@ export default function Header() {
               scrollToSection("home")
               setActiveSection("home")
             }}
-            className={`px-3 py-2 text-sm font-medium relative rounded-md hover:bg-accent ${
-              activeSection === "home" ? "text-brand-primary" : "text-muted-foreground hover:text-brand-primary"
+            className={`px-3 py-2 text-sm font-medium relative rounded-md ${
+              activeSection === "home" ? "text-brand-primary" : "text-white hover:text-brand-primary"
             }`}
           >
             <span className="relative after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-0.5 after:bg-brand-primary after:transition-all after:duration-300 hover:after:w-full">
@@ -86,41 +83,28 @@ export default function Header() {
           </button>
           <button
             onClick={() => {
-              scrollToSection("about")
-              setActiveSection("about")
+              scrollToSection("demo")
+              setActiveSection("demo")
             }}
-            className={`px-3 py-2 text-sm font-medium relative rounded-md hover:bg-accent ${
-              activeSection === "about" ? "text-brand-primary" : "text-muted-foreground hover:text-brand-primary"
+            className={`px-3 py-2 text-sm font-medium relative rounded-md ${
+              activeSection === "demo" ? "text-brand-primary" : "text-white hover:text-brand-primary"
             }`}
           >
             <span className="relative after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-0.5 after:bg-brand-primary after:transition-all after:duration-300 hover:after:w-full">
-              Sobre
+              Envie seu Áudio
             </span>
           </button>
           <button
             onClick={() => {
-              scrollToSection("approach")
-              setActiveSection("approach")
+              scrollToSection("economic-impact")
+              setActiveSection("economic-impact")
             }}
-            className={`px-3 py-2 text-sm font-medium relative rounded-md hover:bg-accent ${
-              activeSection === "approach" ? "text-brand-primary" : "text-muted-foreground hover:text-brand-primary"
+            className={`px-3 py-2 text-sm font-medium relative rounded-md ${
+              activeSection === "economic-impact" ? "text-brand-primary" : "text-white hover:text-brand-primary"
             }`}
           >
             <span className="relative after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-0.5 after:bg-brand-primary after:transition-all after:duration-300 hover:after:w-full">
-              Abordagem
-            </span>
-          </button>
-          <button
-            onClick={() => {
-              scrollToSection("benefits")
-              setActiveSection("benefits")
-            }}
-            className={`px-3 py-2 text-sm font-medium relative rounded-md hover:bg-accent ${
-              activeSection === "benefits" ? "text-brand-primary" : "text-muted-foreground hover:text-brand-primary"
-            }`}
-          >
-            <span className="relative after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-0.5 after:bg-brand-primary after:transition-all after:duration-300 hover:after:w-full">
-              Benefícios
+              Impacto
             </span>
           </button>
           <button
@@ -128,8 +112,8 @@ export default function Header() {
               scrollToSection("contact")
               setActiveSection("contact")
             }}
-            className={`px-3 py-2 text-sm font-medium relative rounded-md hover:bg-accent ${
-              activeSection === "contact" ? "text-brand-primary" : "text-muted-foreground hover:text-brand-primary"
+            className={`px-3 py-2 text-sm font-medium relative rounded-md ${
+              activeSection === "contact" ? "text-brand-primary" : "text-white hover:text-brand-primary"
             }`}
           >
             <span className="relative after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-0.5 after:bg-brand-primary after:transition-all after:duration-300 hover:after:w-full">
@@ -137,8 +121,6 @@ export default function Header() {
             </span>
           </button>
           <div className="ml-2 flex items-center space-x-2">
-            <LanguageSwitcher />
-            <ThemeToggle />
           </div>
         </nav>
       </div>

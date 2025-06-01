@@ -4,7 +4,6 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
-import { Button } from "@/components/ui/button"
 
 export default function MSRecognitionSection() {
   const [sectionRef, sectionInView] = useScrollAnimation()
@@ -46,67 +45,52 @@ export default function MSRecognitionSection() {
               </Link>
             </motion.div>
 
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              animate={sectionInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, delay: 0.1 }}
-              className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-6"
-            >
-              Oficialmente membros do Microsoft for Startups Founders Hub!
-            </motion.h2>
-
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={sectionInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, delay: 0.2 }}
-              className="text-lg md:text-xl leading-relaxed mb-6 text-indigo-100"
-            >
-              É com imenso orgulho que anunciamos nossa seleção no <strong>Microsoft for Startups Founders Hub</strong>.
-              Esta seleção chancela o potencial inovador da HEALTH/HEALTH e da nossa abordagem dimensional-vetorial,
-              abrindo portas para um ecossistema de tecnologias de vanguarda e suporte especializado.
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={sectionInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, delay: 0.3 }}
-              className="text-lg md:text-xl leading-relaxed mb-6 text-indigo-100"
-            >
-              Através desta colaboração estratégica, estamos potencializando nossas soluções com o poder do{" "}
-              <strong>Azure AI</strong>, otimizando nosso desenvolvimento com ferramentas como{" "}
-              <strong>GitHub Copilot</strong>, e acessando uma vasta rede de mentores e recursos da Microsoft. Isso nos
-              permite acelerar a entrega de valor, refinar a precisão da nossa abordagem dimensional-vetorial e escalar
-              nossas operações com robustez e segurança de nível mundial.
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={sectionInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, delay: 0.4 }}
-              className="text-lg md:text-xl font-semibold leading-relaxed mb-8 text-sky-200"
-            >
-              Para nossos clientes e parceiros, esta parceria significa acesso a soluções ainda mais sofisticadas,
-              confiáveis e na fronteira da inovação tecnológica, com o selo de qualidade e a infraestrutura global da
-              Microsoft.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={sectionInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, delay: 0.5 }}
-              className="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4"
-            >
-              <Button
-                asChild
-                size="lg"
-                className="bg-white text-indigo-700 hover:bg-gray-200 font-semibold py-3.5 px-10 rounded-lg shadow-lg transform transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-sky-300 focus:ring-opacity-50"
-                aria-label="Saiba mais sobre o Microsoft for Startups Founders Hub"
+            <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 shadow-lg">
+              <motion.h2
+                initial={{ opacity: 0, y: 30 }}
+                animate={sectionInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.4, delay: 0.1 }}
+                className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-6"
               >
-                <Link href={foundersHubLink} target="_blank" rel="noopener noreferrer">
-                  Explore o Founders Hub
-                </Link>
-              </Button>
-            </motion.div>
+                Oficialmente membros do Microsoft for Startups Founders Hub!
+              </motion.h2>
+
+              <motion.p
+                initial={{ opacity: 0, y: 30 }}
+                animate={sectionInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.4, delay: 0.2 }}
+                className="text-lg md:text-xl leading-relaxed mb-6 text-white/90"
+              >
+                É com imenso orgulho que anunciamos nossa seleção no{" "}
+                <strong>Microsoft for Startups Founders Hub</strong>. Esta seleção chancela o potencial inovador da
+                HEALTH/HEALTH e da nossa abordagem dimensional-vetorial, abrindo portas para um ecossistema de
+                tecnologias de vanguarda e suporte especializado.
+              </motion.p>
+
+              <motion.p
+                initial={{ opacity: 0, y: 30 }}
+                animate={sectionInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.4, delay: 0.3 }}
+                className="text-lg md:text-xl leading-relaxed mb-6 text-white/90"
+              >
+                Através desta colaboração estratégica, estamos potencializando nossas soluções com o poder do{" "}
+                <strong>Azure AI</strong>, otimizando nosso desenvolvimento com ferramentas como{" "}
+                <strong>GitHub Copilot</strong>, e acessando uma vasta rede de mentores e recursos da Microsoft. Isso
+                nos permite acelerar a entrega de valor, refinar a precisão da nossa abordagem dimensional-vetorial e
+                escalar nossas operações com robustez e segurança de nível mundial.
+              </motion.p>
+
+              <motion.p
+                initial={{ opacity: 0, y: 30 }}
+                animate={sectionInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.4, delay: 0.4 }}
+                className="text-lg md:text-xl font-semibold leading-relaxed text-sky-200"
+              >
+                Para nossos clientes e parceiros, esta parceria significa acesso a soluções ainda mais sofisticadas,
+                confiáveis e na fronteira da inovação tecnológica, com o selo de qualidade e a infraestrutura global da
+                Microsoft.
+              </motion.p>
+            </div>
           </div>
         </div>
       </div>

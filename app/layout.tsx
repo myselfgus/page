@@ -5,7 +5,6 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/components/ui/sonner"
 import MSPartnershipBanner from "@/components/ms-partnership-banner"
-import ScrollToTop from "@/components/scroll-to-top"
 import ChatBot from "@/components/chat-bot"
 
 const inter = Inter({
@@ -33,13 +32,12 @@ export const metadata: Metadata = {
   keywords: [
     "saúde mental",
     "abordagem dimensional",
-    "VINTRA",
     "materialismo existencial",
     "diagnóstico dimensional",
     "Microsoft Founders Hub",
     "inovação em saúde",
   ],
-  authors: [{ name: "HEALTH/HEALTH", url: "https://www.healthhealth.com" }],
+  authors: [{ name: "HEALTH/HEALTH", url: "https://healthhealth.io" }],
   creator: "HEALTH/HEALTH",
   publisher: "HEALTH/HEALTH",
   robots: {
@@ -57,7 +55,7 @@ export const metadata: Metadata = {
     title: "HEALTH/HEALTH - Reimaginando a Saúde Mental",
     description:
       "Uma revolução dimensional na compreensão da experiência humana. Descubra nossa abordagem inovadora para a saúde mental.",
-    url: "https://www.healthhealth.com",
+    url: "https://healthhealth.io",
     siteName: "HEALTH/HEALTH",
     images: [
       {
@@ -138,7 +136,6 @@ export default function RootLayout({
           <MSPartnershipBanner />
           <div>
             <Toaster richColors position="top-right" />
-            <ScrollToTop />
             {children}
             <ChatBot />
           </div>
