@@ -132,7 +132,12 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${playfair.variable} ${sourceSans.variable} bg-background text-foreground antialiased`}
       >
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          storageKey="theme"
+        >
           <MSPartnershipBanner />
           <div>
             <Toaster richColors position="top-right" />

@@ -8,6 +8,7 @@ import ContactFAQSection from "@/components/contact-faq-section"
 import Footer from "@/components/footer"
 import MobileNavigation from "@/components/mobile-navigation"
 import MSPartnershipBadge from "@/components/ms-partnership-badge"
+import ScrollToTop from "@/components/scroll-to-top"
 
 // JSON-LD para a página inicial
 const HomePageJsonLd = {
@@ -53,6 +54,7 @@ export default function Home() {
       </main>
 
       <Footer />
+      <ScrollToTop />
       <MSPartnershipBadge />
     </div>
   )

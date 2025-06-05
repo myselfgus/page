@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation"
 import Link from "next/link"
 import { scrollToSection } from "@/utils/enhanced-smooth-scroll"
 import { useIsMobile } from "@/hooks/use-mobile"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 export default function Header() {
   const [activeSection, setActiveSection] = useState("home")
@@ -121,6 +122,7 @@ export default function Header() {
             </span>
           </button>
           <div className="ml-2 flex items-center space-x-2">
+            <ThemeToggle />
           </div>
         </nav>
       </div>
