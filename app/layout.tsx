@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/components/ui/sonner"
 import MSPartnershipBanner from "@/components/ms-partnership-banner"
 import ChatBot from "@/components/chat-bot"
+import ScrollProgress from "@/components/scroll-progress"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -132,7 +133,13 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${playfair.variable} ${sourceSans.variable} bg-background text-foreground antialiased`}
       >
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          storageKey="theme"
+        >
+          <ScrollProgress />
           <MSPartnershipBanner />
           <div>
             <Toaster richColors position="top-right" />
