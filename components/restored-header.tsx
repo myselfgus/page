@@ -7,7 +7,7 @@ import { scrollToSection } from "@/utils/enhanced-smooth-scroll"
 import { useIsMobile } from "@/hooks/use-mobile"
 import { ThemeToggle } from "@/components/theme-toggle"
 
-export default function Header() {
+export default function RestoredHeader() {
   const [activeSection, setActiveSection] = useState("home")
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
@@ -55,7 +55,7 @@ export default function Header() {
       }`}
       style={{
         top: "var(--banner-height, 0)",
-        marginTop: "-1px", // Adjust to align perfectly with the bottom border of the banner
+        marginTop: "-1px",
       }}
     >
       <div className="container mx-auto px-4 md:px-6 lg:px-8 flex justify-between items-center">
@@ -67,29 +67,51 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Desktop Navigation - Simplified */}
-        <nav className="hidden md:flex items-center space-x-8">
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center space-x-2 lg:space-x-4">
           <button
-            onClick={() => scrollToSection("demo")}
-            className="text-white/60 hover:text-white font-[300] text-sm tracking-wide transition-colors duration-300"
+            onClick={() => {
+              scrollToSection("home")
+              setActiveSection("home")
+            }}
+            className={`px-3 py-2 text-sm font-medium relative rounded-lg transition-all duration-300 ${
+              activeSection === "home" 
+                ? "text-white bg-white/5" 
+                : "text-white/70 hover:text-white hover:bg-white/5"
+            }`}
           >
-            Demo
+            <span className="relative font-[400] tracking-wide">
+              Home
+            </span>
           </button>
           <button
-            className="px-6 py-2 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 
-                       text-white/90 hover:text-white font-[300] text-sm tracking-wide
-                       rounded-lg backdrop-blur-sm transition-all duration-300"
+            onClick={() => {
+              scrollToSection("demo")
+              setActiveSection("demo")
+            }}
+            className={`px-3 py-2 text-sm font-medium relative rounded-lg transition-all duration-300 ${
+              activeSection === "demo" 
+                ? "text-white bg-white/5" 
+                : "text-white/70 hover:text-white hover:bg-white/5"
+            }`}
           >
-            Get Access
+            <span className="relative font-[400] tracking-wide">
+              Demo
+            </span>
           </button>
-        </nav>
-
-        {/* Mobile menu button */}
-        <div className="md:hidden">
-          <button className="text-white/60 hover:text-white transition-colors duration-300">
+          <button
+            onClick={() => {
+              scrollToSection("economic-impact")
+              setActiveSection("economic-impact")
+            }}
+            className={`px-3 py-2 text-sm font-medium relative rounded-lg transition-all duration-300 ${
+              activeSection === "economic-impact" 
+                ? "text-white bg-white/5" 
+                : "text-white/70 hover:text-white hover:bg-white/5"
+            }`}
           >
-            <span className="relative after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-0.5 after:bg-brand-primary after:transition-all after:duration-300 hover:after:w-full">
-              Impacto
+            <span className="relative font-[400] tracking-wide">
+              Impact
             </span>
           </button>
           <button
@@ -97,12 +119,14 @@ export default function Header() {
               scrollToSection("contact")
               setActiveSection("contact")
             }}
-            className={`px-3 py-2 text-sm font-medium relative rounded-md ${
-              activeSection === "contact" ? "text-brand-primary" : "text-white hover:text-brand-primary"
+            className={`px-3 py-2 text-sm font-medium relative rounded-lg transition-all duration-300 ${
+              activeSection === "contact" 
+                ? "text-white bg-white/5" 
+                : "text-white/70 hover:text-white hover:bg-white/5"
             }`}
           >
-            <span className="relative after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-0.5 after:bg-brand-primary after:transition-all after:duration-300 hover:after:w-full">
-              Contato
+            <span className="relative font-[400] tracking-wide">
+              Contact
             </span>
           </button>
           <div className="ml-2 flex items-center space-x-2">

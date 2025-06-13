@@ -23,10 +23,14 @@ export default function HeroSection() {
       aria-label="Hero section - ZEO AI Clinical Assistant"
       role="banner"
     >
-      {/* Subtle background grid */}
+      {/* Background visualization with dimensional space */}
       <div className="absolute inset-0 z-0" aria-hidden="true">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:100px_100px]" />
+        <ExplosiveVisualization />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:100px_100px]" />
       </div>
+
+      {/* Overlay gradient for better text readability */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/60 via-transparent to-[#0a0a0a]/40 z-[2]" aria-hidden="true" />
 
       {/* Content */}
       <div className="container relative z-10 px-4 md:px-6 lg:px-8 pt-20 pb-24 md:pt-24 md:pb-32 lg:pt-32 lg:pb-40">
@@ -49,10 +53,10 @@ export default function HeroSection() {
             transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1], delay: 0.1 }}
             className="font-primary font-bold text-white mb-8 md:mb-12 tracking-tight leading-none"
           >
-            <span className="block text-8xl md:text-9xl lg:text-[12rem] mb-4 md:mb-6 font-[300] tracking-[-0.08em] text-white/95">
-              ZEO
+            <span className="block text-7xl md:text-8xl lg:text-9xl mb-2 md:mb-4 font-[300] tracking-[-0.06em] text-white/95">
+              ZeoCare
             </span>
-            <span className="block text-xl md:text-2xl lg:text-3xl font-[400] tracking-[0.1em] text-white/60 uppercase">
+            <span className="block text-xl md:text-2xl lg:text-3xl font-[400] tracking-[0.05em] text-white/60">
               AI Clinical Assistant
             </span>
           </motion.h1>
@@ -61,31 +65,49 @@ export default function HeroSection() {
             initial={false}
             animate={isLoaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1], delay: 0.2 }}
-            className="text-lg md:text-xl text-white/50 mb-12 md:mb-16 max-w-2xl mx-auto leading-relaxed font-[300]"
+            className="text-lg md:text-xl text-white/60 mb-4 md:mb-6 max-w-3xl mx-auto leading-relaxed font-[400]"
           >
-            Advanced transcription and clinical documentation
+            Revolutionary AI platform that transforms{" "}
+            <span className="text-white/90 font-[500]">audio transcriptions</span> into{" "}
+            <span className="text-white/80 font-[500]">dimensional mental health insights</span>.
+          </motion.p>
+
+          <motion.p
+            initial={false}
+            animate={isLoaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1], delay: 0.3 }}
+            className="text-base md:text-lg text-white/40 mb-8 md:mb-12 max-w-2xl mx-auto font-[300] leading-relaxed"
+          >
+            100% automated documentation • Dimensional space analysis • Professional quality assurance
           </motion.p>
 
           <motion.div
             initial={false}
             animate={isLoaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1], delay: 0.3 }}
-            className="flex justify-center"
+            transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1], delay: 0.4 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
-            <button
+            <ModernButton
+              variant="primary"
+              size="lg"
               onClick={() => scrollToSection("demo")}
-              className="group relative px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 
-                         text-white/90 hover:text-white font-[400] text-base tracking-wide
-                         rounded-lg backdrop-blur-sm transition-all duration-300
-                         hover:scale-105 active:scale-95
-                         focus:outline-none focus:ring-2 focus:ring-white/20"
-              aria-label="Try ZEO demo"
+              icon={<Play size={18} />}
+              iconPosition="right"
+              ariaLabel="Try ZeoCare demo - Interactive AI clinical assistant demonstration"
             >
-              <span className="relative z-10 flex items-center gap-2">
-                Try Demo
-                <Play size={16} className="group-hover:translate-x-0.5 transition-transform duration-300" />
-              </span>
-            </button>
+              Try Demo
+            </ModernButton>
+            
+            <ModernButton
+              variant="secondary"
+              size="lg"
+              onClick={() => scrollToSection("contact")}
+              icon={<Zap size={18} />}
+              iconPosition="left"
+              ariaLabel="Get started with ZeoCare - Contact us to begin using AI clinical assistant"
+            >
+              Get Started
+            </ModernButton>
           </motion.div>
         </div>
 
@@ -99,8 +121,8 @@ export default function HeroSection() {
             onClick={() => scrollToSection("demo")}
           >
             <div className="flex flex-col items-center">
-              <span className="text-white/60 text-sm mb-3 font-secondary font-[400] tracking-wide group-hover:text-white/80 transition-colors duration-300">
-                Explore ZEO
+              <span className="text-white/60 text-sm mb-3 font-[400] tracking-wide group-hover:text-white/80 transition-colors duration-300">
+                Explore ZeoCare
               </span>
               <div className="relative">
                 <div className="absolute inset-0 bg-white/10 rounded-full blur-md group-hover:bg-white/20 transition-all duration-300"></div>

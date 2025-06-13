@@ -23,11 +23,11 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   title: {
-    default: "ZEO Care - AI Clinical Assistant",
-    template: "%s | ZEO Care",
+    default: "ZeoCare - AI Clinical Assistant",
+    template: "%s | ZeoCare",
   },
   description:
-    "Modern AI-powered clinical assistant for transcription and documentation. ZEO Care streamlines healthcare workflows with intelligent automation, extensible MCP architecture, and professional minimalist design.",
+    "Revolutionary AI-powered clinical assistant that transforms audio transcriptions into dimensional mental health insights. ZeoCare provides 100% automated documentation with professional quality assurance.",
   keywords: [
     "AI clinical assistant",
     "medical transcription",
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
     "AI healthcare",
     "medical AI",
   ],
-  authors: [{ name: "ZEO Care", url: "https://zeocare.com" }],
-  creator: "ZEO Care",
-  publisher: "ZEO Care",
+  authors: [{ name: "ZeoCare", url: "https://zeocare.com" }],
+  creator: "ZeoCare",
+  publisher: "ZeoCare",
   robots: {
     index: true,
     follow: true,
@@ -52,17 +52,17 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "ZEO Care - AI Clinical Assistant",
+    title: "ZeoCare - AI Clinical Assistant",
     description:
-      "Modern AI-powered clinical assistant for transcription and documentation. Streamlining healthcare workflows with intelligent automation.",
+      "Revolutionary AI-powered clinical assistant that transforms audio transcriptions into dimensional mental health insights with 100% automated documentation.",
     url: "https://zeocare.com",
-    siteName: "HEALTH/HEALTH",
+    siteName: "ZeoCare",
     images: [
       {
-        url: "https://www.healthhealth.com/og-image.png",
+        url: "https://www.zeocare.com/og-image.png",
         width: 1200,
         height: 630,
-        alt: "HEALTH/HEALTH - Reimaginando a Saúde Mental",
+        alt: "ZeoCare - Revolutionary AI Clinical Assistant",
       },
     ],
     locale: "pt_BR",
@@ -70,8 +70,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ZEO Care - AI Clinical Assistant",
-    description: "Modern AI-powered clinical assistant for healthcare automation. #AI #Healthcare #MedTech",
+    title: "ZeoCare - AI Clinical Assistant",
+    description: "Revolutionary AI clinical assistant with dimensional mental health insights. 100% automated documentation. #AI #Healthcare #MedTech",
     site: "@zeocare",
     creator: "@zeocare",
     images: ["https://zeocare.com/twitter-image.png"],
@@ -107,7 +107,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "ZEO Care",
+              name: "ZeoCare",
               url: "https://zeocare.com",
               logo: "https://zeocare.com/logo.png",
               contactPoint: {
