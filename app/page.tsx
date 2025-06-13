@@ -28,7 +28,7 @@ const HomePageJsonLd = {
 
 export default function Home() {
   return (
-    <div className="app bg-[#0a0a0a] min-h-screen">
+    <div className="app min-h-screen" style={{background: "linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #0f0f0f 100%)"}}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(HomePageJsonLd) }} />
       <MobileNavigation />
       <RestoredHeader />

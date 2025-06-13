@@ -19,7 +19,8 @@ export default function HeroSection() {
   return (
     <section 
       id="home" 
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0a0a]"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      style={{background: "linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #0f0f0f 100%)"}}
       aria-label="Hero section - ZEO AI Clinical Assistant"
       role="banner"
     >
@@ -30,7 +31,7 @@ export default function HeroSection() {
       </div>
 
       {/* Overlay gradient for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/60 via-transparent to-[#0a0a0a]/40 z-[2]" aria-hidden="true" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/60 via-transparent to-[#0f0f0f]/40 z-[2]" aria-hidden="true" />
 
       {/* Content */}
       <div className="container relative z-10 px-4 md:px-6 lg:px-8 pt-20 pb-24 md:pt-24 md:pb-32 lg:pt-32 lg:pb-40">
@@ -41,7 +42,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
             className="mb-6 md:mb-8"
           >
-            <span className="inline-flex items-center px-3 py-1.5 md:px-4 md:py-2 bg-white/3 backdrop-blur-sm border border-white/8 rounded-full text-white/60 text-xs md:text-sm font-medium font-secondary uppercase tracking-[0.1em] transition-all duration-300 hover:bg-white/5 hover:border-white/12 hover:text-white/80">
+            <span className="inline-flex items-center px-4 py-2 bg-white/3 backdrop-blur-sm border border-white/8 rounded-none" style={{color: "rgba(255, 255, 255, 0.5)", fontFamily: "'Manrope', sans-serif", fontSize: "1rem", fontWeight: "400", letterSpacing: "0.05em", textTransform: "uppercase"}}>
               <span className="w-1.5 h-1.5 bg-white/40 rounded-full mr-2 animate-pulse"></span>
               Clinical AI Platform
             </span>
@@ -51,12 +52,16 @@ export default function HeroSection() {
             initial={false}
             animate={isLoaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1], delay: 0.1 }}
-            className="font-primary font-bold text-white mb-8 md:mb-12 tracking-tight leading-none"
+            className="mb-8 md:mb-12 leading-none"
+            style={{fontFamily: "'Space Grotesk', sans-serif"}}
           >
-            <span className="block text-7xl md:text-8xl lg:text-9xl mb-2 md:mb-4 font-[300] tracking-[-0.06em] text-white/95">
+            <span className="block mb-4" style={{fontSize: "6rem", fontWeight: "700", color: "#ffffff", letterSpacing: "-0.08em", textShadow: "0 0 40px rgba(255, 255, 255, 0.1)"}}>
               ZeoCare
             </span>
-            <span className="block text-xl md:text-2xl lg:text-3xl font-[400] tracking-[0.05em] text-white/60">
+            <div className="relative">
+              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-60 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent opacity-30"></div>
+            </div>
+            <span className="block mt-8" style={{fontFamily: "'Manrope', sans-serif", fontSize: "1.1rem", color: "rgba(255, 255, 255, 0.4)", fontWeight: "400", letterSpacing: "0.08em", textTransform: "uppercase"}}>
               AI Clinical Assistant
             </span>
           </motion.h1>
@@ -65,49 +70,33 @@ export default function HeroSection() {
             initial={false}
             animate={isLoaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1], delay: 0.2 }}
-            className="text-lg md:text-xl text-white/60 mb-4 md:mb-6 max-w-3xl mx-auto leading-relaxed font-[400]"
+            className="mb-12 max-w-3xl mx-auto text-center"
+            style={{fontFamily: "'Manrope', sans-serif", color: "rgba(255, 255, 255, 0.4)", fontSize: "0.95rem", fontWeight: "400", lineHeight: "1.6", letterSpacing: "0.01em"}}
           >
-            Revolutionary AI platform that transforms{" "}
-            <span className="text-white/90 font-[500]">audio transcriptions</span> into{" "}
-            <span className="text-white/80 font-[500]">dimensional mental health insights</span>.
-          </motion.p>
-
-          <motion.p
-            initial={false}
-            animate={isLoaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1], delay: 0.3 }}
-            className="text-base md:text-lg text-white/40 mb-8 md:mb-12 max-w-2xl mx-auto font-[300] leading-relaxed"
-          >
-            100% automated documentation • Dimensional space analysis • Professional quality assurance
+            Revolutionary AI platform that transforms audio transcriptions into dimensional mental health insights with 100% automated documentation and professional quality assurance.
           </motion.p>
 
           <motion.div
             initial={false}
             animate={isLoaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1], delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1], delay: 0.3 }}
+            className="flex flex-col sm:flex-row gap-6 justify-center items-center"
           >
-            <ModernButton
-              variant="primary"
-              size="lg"
+            <button
               onClick={() => scrollToSection("demo")}
-              icon={<Play size={18} />}
-              iconPosition="right"
-              ariaLabel="Try ZeoCare demo - Interactive AI clinical assistant demonstration"
+              className="btn-mcp-primary flex items-center gap-2"
             >
               Try Demo
-            </ModernButton>
+              <Play size={16} />
+            </button>
             
-            <ModernButton
-              variant="secondary"
-              size="lg"
+            <button
               onClick={() => scrollToSection("contact")}
-              icon={<Zap size={18} />}
-              iconPosition="left"
-              ariaLabel="Get started with ZeoCare - Contact us to begin using AI clinical assistant"
+              className="btn-mcp-secondary flex items-center gap-2"
             >
+              <Zap size={16} />
               Get Started
-            </ModernButton>
+            </button>
           </motion.div>
         </div>
 

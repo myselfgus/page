@@ -50,18 +50,19 @@ export default function RestoredHeader() {
     <header
       className={`fixed left-0 w-full z-50 transition-all duration-500 ease-out ${
         scrolled
-          ? "py-2 md:py-3 bg-[#0a0a0a]/90 backdrop-blur-xl border-b border-white/5"
+          ? "py-2 md:py-3 backdrop-blur-xl border-b border-white/5"
           : "py-4 md:py-6 bg-transparent"
       }`}
       style={{
         top: "var(--banner-height, 0)",
         marginTop: "-1px",
+        ...(scrolled ? {background: "rgba(15, 15, 15, 0.9)"} : {})
       }}
     >
       <div className="container mx-auto px-4 md:px-6 lg:px-8 flex justify-between items-center">
         <div className="flex items-center">
           <Link href="/" className="flex items-center space-x-2">
-            <span className="font-primary font-[300] text-2xl md:text-3xl tracking-[-0.05em] text-white/90 hover:text-white transition-all duration-300">
+            <span style={{fontFamily: "'Space Grotesk', sans-serif", fontSize: "1.5rem", fontWeight: "700", color: "#ffffff", letterSpacing: "-0.02em", textShadow: "0 0 20px rgba(255, 255, 255, 0.1)", transition: "all 0.3s ease"}}>
               ZeoCare
             </span>
           </Link>
@@ -74,60 +75,80 @@ export default function RestoredHeader() {
               scrollToSection("home")
               setActiveSection("home")
             }}
-            className={`px-3 py-2 text-sm font-medium relative rounded-lg transition-all duration-300 ${
+            className={`px-3 py-2 text-sm relative transition-all duration-300 ${
               activeSection === "home" 
-                ? "text-white bg-white/5" 
-                : "text-white/70 hover:text-white hover:bg-white/5"
+                ? "bg-white/5" 
+                : "hover:bg-white/5"
             }`}
+            style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontWeight: "400",
+              color: activeSection === "home" ? "#ffffff" : "rgba(255, 255, 255, 0.7)",
+              border: "none",
+              borderRadius: "0"
+            }}
           >
-            <span className="relative font-[400] tracking-wide">
-              Home
-            </span>
+            Home
           </button>
           <button
             onClick={() => {
               scrollToSection("demo")
               setActiveSection("demo")
             }}
-            className={`px-3 py-2 text-sm font-medium relative rounded-lg transition-all duration-300 ${
+            className={`px-3 py-2 text-sm relative transition-all duration-300 ${
               activeSection === "demo" 
-                ? "text-white bg-white/5" 
-                : "text-white/70 hover:text-white hover:bg-white/5"
+                ? "bg-white/5" 
+                : "hover:bg-white/5"
             }`}
+            style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontWeight: "400",
+              color: activeSection === "demo" ? "#ffffff" : "rgba(255, 255, 255, 0.7)",
+              border: "none",
+              borderRadius: "0"
+            }}
           >
-            <span className="relative font-[400] tracking-wide">
-              Demo
-            </span>
+            Demo
           </button>
           <button
             onClick={() => {
               scrollToSection("economic-impact")
               setActiveSection("economic-impact")
             }}
-            className={`px-3 py-2 text-sm font-medium relative rounded-lg transition-all duration-300 ${
+            className={`px-3 py-2 text-sm relative transition-all duration-300 ${
               activeSection === "economic-impact" 
-                ? "text-white bg-white/5" 
-                : "text-white/70 hover:text-white hover:bg-white/5"
+                ? "bg-white/5" 
+                : "hover:bg-white/5"
             }`}
+            style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontWeight: "400",
+              color: activeSection === "economic-impact" ? "#ffffff" : "rgba(255, 255, 255, 0.7)",
+              border: "none",
+              borderRadius: "0"
+            }}
           >
-            <span className="relative font-[400] tracking-wide">
-              Impact
-            </span>
+            Impact
           </button>
           <button
             onClick={() => {
               scrollToSection("contact")
               setActiveSection("contact")
             }}
-            className={`px-3 py-2 text-sm font-medium relative rounded-lg transition-all duration-300 ${
+            className={`px-3 py-2 text-sm relative transition-all duration-300 ${
               activeSection === "contact" 
-                ? "text-white bg-white/5" 
-                : "text-white/70 hover:text-white hover:bg-white/5"
+                ? "bg-white/5" 
+                : "hover:bg-white/5"
             }`}
+            style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontWeight: "400",
+              color: activeSection === "contact" ? "#ffffff" : "rgba(255, 255, 255, 0.7)",
+              border: "none",
+              borderRadius: "0"
+            }}
           >
-            <span className="relative font-[400] tracking-wide">
-              Contact
-            </span>
+            Contact
           </button>
           <div className="ml-2 flex items-center space-x-2">
             <ThemeToggle />
