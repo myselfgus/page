@@ -1,11 +1,11 @@
-import RestoredHeader from "@/components/restored-header"
-import HeroSection from "@/components/hero-section"
-import DemoSection from "@/components/demo-section"
-import MSRecognitionSection from "@/components/ms-recognition-section"
-import EconomicImpactSection from "@/components/economic-impact-section"
-import AboutSection from "@/components/about-section"
-import ContactFAQSection from "@/components/contact-faq-section"
-import Footer from "@/components/footer"
+import HeaderXAI from "@/components/header-xai"
+import HeroSectionXAI from "@/components/hero-section-xai"
+import DemoSectionXAI from "@/components/demo-section-xai"
+import MSRecognitionXAI from "@/components/ms-recognition-xai"
+import EconomicImpactXAI from "@/components/economic-impact-xai"
+import AboutXAI from "@/components/about-xai"
+import ContactXAI from "@/components/contact-xai"
+import FooterXAI from "@/components/footer-xai"
 import MobileNavigation from "@/components/mobile-navigation"
 import MSPartnershipBadge from "@/components/ms-partnership-badge"
 import ScrollToTop from "@/components/scroll-to-top"
@@ -31,29 +31,29 @@ export default function Home() {
     <div className="app min-h-screen" style={{background: "linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #0f0f0f 100%)"}}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(HomePageJsonLd) }} />
       <MobileNavigation />
-      <RestoredHeader />
+      <HeaderXAI />
 
       <main>
         {/* 1. Hero Section: Impacto Imediato */}
-        <HeroSection />
+        <HeroSectionXAI />
 
         {/* 2. Demo Section: Experiência Interativa com Visualização Dimensional */}
-        <DemoSection />
+        <DemoSectionXAI />
 
         {/* 3. Microsoft Recognition Section: Validação e Credibilidade */}
-        <MSRecognitionSection />
+        <MSRecognitionXAI />
 
         {/* 4. Impacto Econômico, Automação e Qualidade de Documentação */}
-        <EconomicImpactSection />
+        <EconomicImpactXAI />
 
-        {/* 5. About / Founders Hub Section */}
-        <AboutSection />
+        {/* 5. About / Technology Section */}
+        <AboutXAI />
 
         {/* 6. Contact & FAQ Section */}
-        <ContactFAQSection />
+        <ContactXAI />
       </main>
 
-      <Footer />
+      <FooterXAI />
       <ScrollToTop />
       <MSPartnershipBadge />
     </div>

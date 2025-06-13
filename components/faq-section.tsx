@@ -12,7 +12,7 @@ type FAQItem = {
 
 const faqs: FAQItem[] = [
   {
-    question: "O que é a abordagem dimensional da HEALTH/HEALTH?",
+    question: "O que é a abordagem dimensional da ZeoCare?",
     answer:
       "Nossa abordagem dimensional posiciona a experiência mental em um espaço vetorial contínuo de 10 dimensões fundamentais, superando as limitações dos sistemas categoriais tradicionais que dividem a experiência em 'transtornos' discretos.",
   },
@@ -22,7 +22,7 @@ const faqs: FAQItem[] = [
       "As visualizações dimensionais facilitam a compreensão da experiência pessoal, reduzem o estigma através da despatologização, promovem maior autonomia no processo terapêutico e reconhecem a singularidade da experiência individual além das categorias diagnósticas genéricas.",
   },
   {
-    question: "Quais são as bases científicas do framework HEALTH/HEALTH?",
+    question: "Quais são as bases científicas do framework ZeoCare?",
     answer:
       "Nosso framework fundamenta-se no materialismo existencial, integrando neurociência contemporânea, fenomenologia da experiência vivida e ciência de sistemas dinâmicos para criar uma abordagem cientificamente rigorosa e humanisticamente significativa.",
   },
@@ -32,7 +32,7 @@ const faqs: FAQItem[] = [
       "Oferecemos treinamento, suporte técnico e ferramentas de visualização que podem ser integradas à sua prática. Entre em contato conosco para uma avaliação inicial, demonstração personalizada e plano de implementação adaptado às suas necessidades específicas.",
   },
   {
-    question: "A HEALTH/HEALTH oferece parcerias para pesquisadores?",
+    question: "A ZeoCare oferece parcerias para pesquisadores?",
     answer:
       "Sim, buscamos ativamente parcerias com pesquisadores interessados em explorar nosso framework dimensional. Oferecemos acesso a dados dimensionais quantitativos, ferramentas para análise trajetorial e suporte para desenvolvimento de intervenções personalizadas baseadas em perfis dimensionais.",
   },

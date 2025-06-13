@@ -43,7 +43,7 @@ export default function MSPartnershipBadge() {
             </div>
 
             <p className="mb-4">
-              A HEALTH/HEALTH foi selecionada para o programa Microsoft for Startups Founders Hub, que apoia startups
+              A ZeoCare foi selecionada para o programa Microsoft for Startups Founders Hub, que apoia startups
               inovadoras com recursos, mentoria e tecnologia de ponta.
             </p>
 

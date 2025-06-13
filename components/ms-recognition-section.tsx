@@ -63,7 +63,7 @@ export default function MSRecognitionSection() {
               >
                 É com imenso orgulho que anunciamos nossa seleção no{" "}
                 <strong>Microsoft for Startups Founders Hub</strong>. Esta seleção chancela o potencial inovador da
-                HEALTH/HEALTH e da nossa abordagem dimensional-vetorial, abrindo portas para um ecossistema de
+                ZeoCare e da nossa abordagem dimensional-vetorial, abrindo portas para um ecossistema de
                 tecnologias de vanguarda e suporte especializado.
               </motion.p>
 

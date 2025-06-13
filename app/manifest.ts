@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next"
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "HEALTH/HEALTH - Reimaginando a Saúde Mental",
-    short_name: "HEALTH/HEALTH",
+    name: "ZeoCare - AI Clinical Assistant",
+    short_name: "ZeoCare",
     description: "Uma revolução dimensional na compreensão da experiência humana",
     start_url: "/",
     display: "standalone",

@@ -57,7 +57,7 @@ export default function Footer() {
               <div className="w-9 h-9 bg-white clip-triangle flex justify-center items-center transform rotate-180 mr-2 relative">
                 <div className="w-[70%] h-[70%] absolute bg-repeat-y bg-[length:100%_10px] bg-[linear-gradient(to_bottom,#0f172a,#0f172a_2px,transparent_2px,transparent_8px)]"></div>
               </div>
-              <span className="font-primary font-bold text-xl text-white tracking-wider">HEALTH/HEALTH</span>
+              <span className="font-primary font-bold text-xl text-white tracking-wider">ZeoCare</span>
             </motion.div>
 
             <motion.p
@@ -113,7 +113,7 @@ export default function Footer() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
               >
-                &copy; {currentYear} HEALTH/HEALTH. Todos os direitos reservados.
+                &copy; {currentYear} ZeoCare. Todos os direitos reservados.
               </motion.p>
 
               {/* Informações de contato */}
@@ -128,8 +128,8 @@ export default function Footer() {
                 </p>
                 <p className="flex items-center gap-1">
                   <Mail className="w-3 h-3" />
-                  <a href="mailto:contato@healthhealth.com" className="hover:text-white transition-colors">
-                    contato@healthhealth.com
+                  <a href="mailto:contato@zeocare.com" className="hover:text-white transition-colors">
+                    contato@zeocare.com
                   </a>
                 </p>
               </motion.div>

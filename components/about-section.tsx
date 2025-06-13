@@ -32,7 +32,7 @@ export default function AboutSection() {
             <div>
               <h3 className="text-2xl font-semibold text-gray-900 mb-3">Nossa Missão e Visão</h3>
               <p className="text-gray-700 leading-relaxed">
-                A HEALTH/HEALTH nasceu da visão de transformar fundamentalmente como compreendemos e tratamos a saúde
+                A ZeoCare nasceu da visão de transformar fundamentalmente como compreendemos e tratamos a saúde
                 mental. Nossa missão é empoderar profissionais e pacientes com ferramentas que transcendem as limitações
                 dos sistemas categoriais tradicionais, oferecendo uma compreensão mais profunda e personalizada do
                 sofrimento psíquico.

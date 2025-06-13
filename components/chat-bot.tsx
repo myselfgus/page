@@ -19,7 +19,7 @@ export default function ChatBot() {
       {open ? (
         <div className="w-80 sm:w-96 h-[450px] bg-white/10 backdrop-blur-md border border-white/20 shadow-xl rounded-xl flex flex-col overflow-hidden">
           <div className="flex items-center justify-between px-4 py-3 bg-black/70 backdrop-blur">
-            <h4 className="text-sm font-semibold text-white">Assistente HEALTH</h4>
+            <h4 className="text-sm font-semibold text-white">Assistente ZeoCare</h4>
             <button onClick={() => setOpen(false)} className="text-white hover:text-emotional-light transition-colors">
               <X size={18} />
             </button>

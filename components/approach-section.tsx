@@ -121,7 +121,7 @@ export default function ApproachSection() {
                 }}
                 transition={{ duration: 0.2 }}
               >
-                <h3 className="text-center mb-6 text-xl text-emotional-dark">Abordagem Dimensional HH</h3>
+                <h3 className="text-center mb-6 text-xl text-emotional-dark">Abordagem Dimensional ZeoCare</h3>
                 <div className="h-[200px] mb-6 rounded-md overflow-hidden bg-black flex items-center justify-center">
                   <RadarChart />
                 </div>
@@ -171,7 +171,7 @@ export default function ApproachSection() {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <p className="text-lg mb-6">
-                O framework HEALTH/HEALTH representa uma ruptura epistemológica com a tradição diagnóstica
+                O framework ZeoCare representa uma ruptura epistemológica com a tradição diagnóstica
                 contemporânea. Enquanto os sistemas categoriais como DSM-5 e CID-11 dividem a experiência em
                 "transtornos" discretos, nossa abordagem dimensional posiciona a experiência mental em um espaço
                 vetorial contínuo de 10 dimensões fundamentais.

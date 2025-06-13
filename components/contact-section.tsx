@@ -57,7 +57,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="text-lg mb-1">Email</h4>
-                    <p className="text-gray-medium mb-0">contato@healthhealth.com.br</p>
+                    <p className="text-gray-medium mb-0">contato@zeocare.com</p>
                   </div>
                 </motion.div>
 
