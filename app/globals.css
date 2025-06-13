@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -45,8 +47,9 @@
     --brand-secondary-foreground: 210 20% 98%;
     --brand-secondary-hover: 173 80% 42%;
 
-    /* Fontes */
-    --font-sans: "Inter", sans-serif;
+    /* ZEO Care Typography */
+    --font-sans: "Space Grotesk", sans-serif;
+    --font-body: "Manrope", sans-serif;
     /* --font-mono: "Roboto Mono", monospace; */
 
     /* Cores dimensionais primárias (mantidas para compatibilidade) */
@@ -74,43 +77,43 @@
   }
 
   .dark {
-    /* Dark mode variables with improved contrast */
-    --background: 224 71.4% 4.1%;
-    --foreground: 210 20% 98%;
+    /* ZEO Care Dark Monochromatic Theme */
+    --background: 0 0% 6%;
+    --foreground: 0 0% 90%;
 
-    --card: 224 71.4% 5.1%;
-    --card-foreground: 210 20% 98%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 90%;
 
-    --popover: 224 71.4% 4.1%;
-    --popover-foreground: 210 20% 98%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 90%;
 
-    --primary: 217 91% 60%;
-    --primary-foreground: 210 20% 98%;
+    --primary: 0 0% 95%;
+    --primary-foreground: 0 0% 10%;
 
-    --secondary: 215 20% 25%;
-    --secondary-foreground: 210 20% 98%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 80%;
 
-    --muted: 215 28% 17%;
-    --muted-foreground: 215 20% 75%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 50%;
 
-    --accent: 215 28% 17%;
-    --accent-foreground: 210 20% 98%;
+    --accent: 0 0% 12%;
+    --accent-foreground: 0 0% 80%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 210 20% 98%;
 
-    --border: 215 20% 25%;
-    --input: 215 28% 17%;
-    --ring: 217 80% 65%;
+    --border: 0 0% 15%;
+    --input: 0 0% 12%;
+    --ring: 0 0% 60%;
 
-    /* Brand colors for dark mode with improved visibility */
-    --brand-primary: 217 91% 65%;
-    --brand-primary-foreground: 210 20% 98%;
-    --brand-primary-hover: 217 80% 75%;
+    /* ZEO Care Brand colors for dark mode */
+    --brand-primary: 0 0% 95%;
+    --brand-primary-foreground: 0 0% 10%;
+    --brand-primary-hover: 0 0% 100%;
 
-    --brand-secondary: 173 80% 45%;
-    --brand-secondary-foreground: 210 20% 98%;
-    --brand-secondary-hover: 173 70% 55%;
+    --brand-secondary: 0 0% 70%;
+    --brand-secondary-foreground: 0 0% 10%;
+    --brand-secondary-hover: 0 0% 80%;
   }
 }
 
@@ -144,7 +147,24 @@ body {
 @layer base {
   * {
     @apply border-border; /* Aplica a cor de borda padrão a todos os elementos */
+    font-variant-ligatures: common-ligatures;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
+
+  body {
+    font-family: 'Manrope', sans-serif;
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #0f0f0f 100%);
+    color: hsl(var(--foreground));
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+}
   body {
     @apply bg-background text-foreground font-body text-base leading-relaxed;
     font-feature-settings: "rlig" 1, "calt" 1; /* Ligaturas opcionais e alternativas contextuais */

@@ -14,15 +14,15 @@ import ScrollToTop from "@/components/scroll-to-top"
 const HomePageJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  name: "HEALTH/HEALTH - A IA que Humaniza a Saúde Mental",
+  name: "ZEO Care - AI Clinical Assistant",
   description:
-    "Inteligência dimensional-vetorial que compreende pacientes como médicos. Automatizamos 90% da documentação clínica, liberando tempo para o vínculo terapêutico.",
-  url: "https://www.healthhealth.com",
+    "Modern AI clinical assistant for transcription and documentation. Streamlining healthcare workflows with intelligent automation and seamless MCP integration.",
+  url: "https://www.zeocare.com",
   mainEntity: {
     "@type": "Organization",
-    name: "HEALTH/HEALTH",
-    url: "https://www.healthhealth.com",
-    logo: "https://www.healthhealth.com/logo.png",
+    name: "ZEO Care",
+    url: "https://www.zeocare.com",
+    logo: "https://www.zeocare.com/logo.png",
   },
 }
 

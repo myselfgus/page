@@ -35,8 +35,8 @@ export default function HeroSection() {
             transition={{ duration: isMobile ? 0.2 : 0.4 }}
             className="mb-6"
           >
-            <span className="inline-block px-4 py-2 bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 rounded-full text-blue-300 text-sm font-medium mb-4">
-              Tecnologia em parceria
+            <span className="inline-block px-4 py-2 bg-white/5 border border-white/10 rounded-full text-white/70 text-sm font-medium mb-4 font-secondary uppercase tracking-wide">
+              Clinical AI Platform
             </span>
           </motion.div>
 
@@ -46,31 +46,31 @@ export default function HeroSection() {
             transition={{ duration: isMobile ? 0.2 : 0.5, delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-7xl font-primary font-bold text-white mb-8 tracking-tight leading-tight"
           >
-            A IA que{" "}
-            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
-              Re-Humaniza
-            </span>{" "}
-            a Saúde
+            <span className="block text-6xl md:text-7xl lg:text-8xl mb-4 font-[700] tracking-[-0.05em]">ZEO</span>
+            AI Clinical{" "}
+            <span className="bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent">
+              Assistant
+            </span>
           </motion.h1>
 
           <motion.p
             initial={false}
             animate={isLoaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: isMobile ? 0.2 : 0.5, delay: isMobile ? 0.15 : 0.2 }}
-            className="text-xl md:text-2xl text-gray-300 mb-6 max-w-4xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-gray-300 mb-6 max-w-4xl mx-auto leading-relaxed font-secondary"
           >
-           Nossa IA-pair-clinician libera{" "}
-            <span className="text-cyan-400 font-semibold">90% do seu tempo</span> para o que realmente importa:{" "}
-            <span className="text-purple-400 font-semibold">o vínculo terapêutico</span>.
+           Modern AI-powered clinical assistant that{" "}
+            <span className="text-white font-semibold">streamlines transcription</span> and{" "}
+            <span className="text-gray-100 font-semibold">automates documentation</span>.
           </motion.p>
 
           <motion.p
             initial={false}
             animate={isLoaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: isMobile ? 0.2 : 0.5, delay: isMobile ? 0.2 : 0.3 }}
-            className="text-lg md:text-xl text-gray-400 mb-10 max-w-3xl mx-auto"
+            className="text-lg md:text-xl text-gray-400 mb-10 max-w-3xl mx-auto font-secondary"
           >
-            Potencializamos médicos de qualidade. Humanizamos a saúde. Revolucionamos o cuidado.
+            Extensible MCP architecture. Minimalist design. Professional workflow automation.
           </motion.p>
 
           <motion.div

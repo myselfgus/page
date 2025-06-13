@@ -61,8 +61,8 @@ export default function Header() {
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
         <div className="flex items-center">
           <Link href="/" className="flex items-center space-x-2">
-            <span className="font-primary font-bold text-xl tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-brand-primary via-brand-secondary to-purple-500 hover:opacity-90 transition-opacity">
-              HEALTH/HEALTH
+            <span className="font-primary font-bold text-xl tracking-[-0.02em] text-white hover:opacity-90 transition-opacity">
+              ZEO
             </span>
           </Link>
         </div>
@@ -92,7 +92,7 @@ export default function Header() {
             }`}
           >
             <span className="relative after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-0.5 after:bg-brand-primary after:transition-all after:duration-300 hover:after:w-full">
-              Envie seu Áudio
+              Try Demo
             </span>
           </button>
           <button
