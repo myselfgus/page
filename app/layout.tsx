@@ -1,45 +1,45 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter, Playfair_Display, Source_Sans_3 } from "next/font/google"
+import { Space_Grotesk, Manrope } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/components/ui/sonner"
 import MSPartnershipBanner from "@/components/ms-partnership-banner"
 import ChatBot from "@/components/chat-bot"
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-secondary",
-})
-
-const playfair = Playfair_Display({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-primary",
+  display: "swap",
+  preload: true,
 })
 
-const sourceSans = Source_Sans_3({
+const manrope = Manrope({
   subsets: ["latin"],
-  variable: "--font-body",
+  variable: "--font-secondary",
+  display: "swap",
+  preload: true,
 })
 
 export const metadata: Metadata = {
   title: {
-    default: "HEALTH/HEALTH - Reimaginando a Saúde Mental",
-    template: "%s | HEALTH/HEALTH",
+    default: "ZEO Care - AI Clinical Assistant",
+    template: "%s | ZEO Care",
   },
   description:
-    "Uma revolução dimensional na compreensão da experiência humana. Nossa abordagem dimensional-vetorial oferece um novo paradigma que honra a complexidade da experiência humana, permitindo avaliações mais precisas e tratamentos personalizados.",
+    "Modern AI-powered clinical assistant for transcription and documentation. ZEO Care streamlines healthcare workflows with intelligent automation, extensible MCP architecture, and professional minimalist design.",
   keywords: [
-    "saúde mental",
-    "abordagem dimensional",
-    "materialismo existencial",
-    "diagnóstico dimensional",
-    "Microsoft Founders Hub",
-    "inovação em saúde",
+    "AI clinical assistant",
+    "medical transcription",
+    "healthcare automation",
+    "MCP architecture",
+    "clinical documentation",
+    "AI healthcare",
+    "medical AI",
   ],
-  authors: [{ name: "HEALTH/HEALTH", url: "https://healthhealth.io" }],
-  creator: "HEALTH/HEALTH",
-  publisher: "HEALTH/HEALTH",
+  authors: [{ name: "ZEO Care", url: "https://zeocare.com" }],
+  creator: "ZEO Care",
+  publisher: "ZEO Care",
   robots: {
     index: true,
     follow: true,
@@ -52,10 +52,10 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "HEALTH/HEALTH - Reimaginando a Saúde Mental",
+    title: "ZEO Care - AI Clinical Assistant",
     description:
-      "Uma revolução dimensional na compreensão da experiência humana. Descubra nossa abordagem inovadora para a saúde mental.",
-    url: "https://healthhealth.io",
+      "Modern AI-powered clinical assistant for transcription and documentation. Streamlining healthcare workflows with intelligent automation.",
+    url: "https://zeocare.com",
     siteName: "HEALTH/HEALTH",
     images: [
       {
@@ -70,11 +70,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "HEALTH/HEALTH - Reimaginando a Saúde Mental",
-    description: "Uma revolução dimensional na compreensão da experiência humana. #SaúdeMental #Inovação",
-    site: "@healthhealth",
-    creator: "@healthhealth",
-    images: ["https://www.healthhealth.com/twitter-image.png"],
+    title: "ZEO Care - AI Clinical Assistant",
+    description: "Modern AI-powered clinical assistant for healthcare automation. #AI #Healthcare #MedTech",
+    site: "@zeocare",
+    creator: "@zeocare",
+    images: ["https://zeocare.com/twitter-image.png"],
   },
   icons: {
     icon: "/favicon.ico",
@@ -82,20 +82,11 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   manifest: "/manifest.json",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#0f172a" },
-  ],
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-  },
   alternates: {
-    canonical: "https://healthhealth.io",
+    canonical: "https://zeocare.com",
     languages: {
-      "pt-BR": "https://healthhealth.io",
-      "en-US": "https://healthhealth.io/en",
+      "en-US": "https://zeocare.com",
+      "pt-BR": "https://zeocare.com/pt",
     },
   },
   generator: "v0.dev",
@@ -107,7 +98,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR" suppressHydrationWarning>
+    <html lang="en-US" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <script
@@ -116,21 +107,21 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "HEALTH/HEALTH",
-              url: "https://healthhealth.io",
-              logo: "https://healthhealth.io/logo.png",
+              name: "ZEO Care",
+              url: "https://zeocare.com",
+              logo: "https://zeocare.com/logo.png",
               contactPoint: {
                 "@type": "ContactPoint",
                 telephone: "+55-11-XXXX-XXXX",
                 contactType: "Customer Service",
               },
-              sameAs: ["https://www.linkedin.com/company/healthhealth", "https://twitter.com/healthhealth"],
+              sameAs: ["https://www.linkedin.com/company/zeocare", "https://twitter.com/zeocare"],
             }),
           }}
         />
       </head>
       <body
-        className={`${inter.variable} ${playfair.variable} ${sourceSans.variable} bg-background text-foreground antialiased`}
+        className={`${spaceGrotesk.variable} ${manrope.variable} bg-background text-foreground antialiased`}
       >
         <ThemeProvider
           attribute="class"

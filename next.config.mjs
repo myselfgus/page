@@ -11,9 +11,6 @@ const nextConfig = {
     domains: ['localhost'],
     unoptimized: true,
   },
-  experimental: {
-    optimizeFonts: true,
-  },
   eslint: {
     ignoreDuringBuilds: true,
   },

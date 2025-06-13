@@ -117,7 +117,7 @@
   }
 }
 
-/* Otimizações para mobile */
+/* Mobile optimizations and touch interactions */
 html,
 body {
   overflow-x: hidden;
@@ -126,6 +126,31 @@ body {
   touch-action: manipulation;
   -webkit-overflow-scrolling: touch;
   -webkit-tap-highlight-color: transparent;
+  /* Improved font rendering on mobile */
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* Enhanced touch targets */
+@media (pointer: coarse) {
+  button, 
+  a,
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Improved focus states for accessibility */
+:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Hide focus ring for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
 }
 
 /* Prevenir layout shifts */
@@ -133,7 +158,7 @@ body {
   max-height: 100000px;
 }
 
-/* Melhorar performance de animações */
+/* Performance optimizations */
 @media (max-width: 768px) {
   * {
     will-change: auto !important;
@@ -142,6 +167,22 @@ body {
   .animate-bounce {
     animation: none !important;
   }
+}
+
+/* GPU acceleration for smooth animations */
+.transform-gpu {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Optimized transitions */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-bounce {
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 @layer base {
@@ -157,24 +198,106 @@ body {
     font-family: 'Manrope', sans-serif;
     background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #0f0f0f 100%);
     color: hsl(var(--foreground));
+    scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 600;
     letter-spacing: -0.02em;
+    text-wrap: balance;
   }
-}
-  body {
-    @apply bg-background text-foreground font-body text-base leading-relaxed;
-    font-feature-settings: "rlig" 1, "calt" 1; /* Ligaturas opcionais e alternativas contextuais */
+
+  /* Advanced button styles */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4;
+    @apply bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20;
+    @apply text-white/90 hover:text-white font-secondary font-medium;
+    @apply rounded-lg backdrop-blur-sm transition-all duration-300;
+    @apply shadow-glow-white-sm hover:shadow-glow-white-md;
+    @apply transform hover:scale-105 active:scale-95;
+    @apply focus:outline-none focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-black;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4;
+    @apply bg-transparent hover:bg-white/5 border border-white/20 hover:border-white/30;
+    @apply text-white/70 hover:text-white/90 font-secondary font-medium;
+    @apply rounded-lg transition-all duration-300;
+    @apply transform hover:scale-105 active:scale-95;
+    @apply focus:outline-none focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-black;
+  }
+
+  /* Touch-friendly interactions */
+  @media (hover: none) {
+    .btn-primary:hover,
+    .btn-secondary:hover {
+      transform: none;
+    }
+    
+    .btn-primary:active,
+    .btn-secondary:active {
+      transform: scale(0.98);
+    }
+  }
+
+  /* Smooth scrolling for anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  
+  /* Additional typography enhancements */
+  p {
+    @apply text-white/60 leading-relaxed mb-4;
+    text-wrap: pretty;
+  }
+  
+  /* Improved link styles */
+  a {
+    @apply transition-colors duration-200;
+  }
+  
+  /* Selection styles */
+  ::selection {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
   }
 
   h1,
   h2,
   h3,
   h4,
-  h5,
   h5,
   h6 {
     @apply font-primary font-semibold leading-tight mb-4;
@@ -194,10 +317,6 @@ body {
 
   h4 {
     @apply text-xl;
-  }
-
-  p {
-    @apply mb-4;
   }
 }
 
@@ -247,11 +366,16 @@ body {
   }
 
   .btn-primary {
-    @apply bg-brand-primary text-brand-primary-foreground hover:bg-brand-primary-hover hover:-translate-y-0.5 shadow-glow-primary-sm;
+    @apply bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white/90 hover:text-white hover:-translate-y-0.5;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.03);
+  }
+  
+  .btn-primary:hover {
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.05);
   }
 
   .btn-outline {
-    @apply bg-transparent border-2 border-muted text-foreground hover:border-brand-primary hover:text-brand-primary hover:-translate-y-0.5;
+    @apply bg-transparent border-2 border-white/20 text-white/70 hover:border-white/40 hover:text-white hover:-translate-y-0.5;
   }
 }
 
