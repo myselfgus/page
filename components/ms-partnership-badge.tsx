@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import Image from "next/image"
 import { useIsMobile } from "@/hooks/use-mobile"
 
 export default function MSPartnershipBadge() {
@@ -13,50 +12,109 @@ export default function MSPartnershipBadge() {
 
   return (
     <>
-      <div className="fixed bottom-4 left-4 z-40 cursor-pointer" onClick={() => setIsOpen(true)}>
-        <div className="bg-black/70 backdrop-blur-sm rounded-full py-2 px-4 flex items-center shadow-lg hover:bg-black/80 transition-all">
-          <Image
-            src="https://www.groovypost.com/wp-content/uploads/2017/02/Microsoft-logo.png"
-            alt="Microsoft"
-            width={16}
-            height={16}
-          />
-          <span className="ml-2 text-white text-xs">Microsoft for Startups Founders Hub</span>
+      {/* xAI Style Bottom Bar */}
+      <div className="fixed bottom-0 left-0 right-0 z-40">
+        <div 
+          className="mx-auto max-w-6xl px-4 pb-4"
+        >
+          <div 
+            className="cursor-pointer transition-all duration-300 hover:translate-y-[-2px]"
+            onClick={() => setIsOpen(true)}
+            style={{
+              background: "rgba(255, 255, 255, 0.02)",
+              backdropFilter: "blur(20px) saturate(120%)",
+              border: "1px solid rgba(255, 255, 255, 0.05)",
+              borderRadius: "0"
+            }}
+          >
+            <div className="px-6 py-3 flex items-center justify-center">
+              <div className="w-2 h-2 bg-white/30 mr-3"></div>
+              <span style={{
+                fontFamily: "'Manrope', sans-serif",
+                color: "rgba(255, 255, 255, 0.6)",
+                fontSize: "0.8rem",
+                fontWeight: "400",
+                letterSpacing: "0.05em",
+                textTransform: "uppercase"
+              }}>
+                Microsoft Founders Hub • Validated AI Platform
+              </span>
+            </div>
+          </div>
         </div>
       </div>
 
+      {/* Modal with xAI styling */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          style={{
+            background: "rgba(15, 15, 15, 0.95)",
+            backdropFilter: "blur(20px)"
+          }}
           onClick={() => setIsOpen(false)}
         >
-          <div className="bg-white rounded-lg p-6 max-w-md w-full" onClick={(e) => e.stopPropagation()}>
-            <div className="flex items-center mb-4">
-              <Image
-                src="https://www.groovypost.com/wp-content/uploads/2017/02/Microsoft-logo.png"
-                alt="Microsoft"
-                width={24}
-                height={24}
-                className="mr-2"
-              />
-              <h3 className="text-xl font-primary font-bold">Microsoft for Startups</h3>
+          <div 
+            className="max-w-md w-full p-8"
+            style={{
+              background: "rgba(255, 255, 255, 0.02)",
+              backdropFilter: "blur(20px) saturate(120%)",
+              border: "1px solid rgba(255, 255, 255, 0.1)",
+              borderRadius: "0"
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="mb-6">
+              <div className="w-4 h-4 bg-white/40 mb-4"></div>
+              <h3 style={{
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontSize: "1.5rem",
+                fontWeight: "400",
+                color: "rgba(255, 255, 255, 0.9)",
+                letterSpacing: "-0.02em",
+                marginBottom: "1rem"
+              }}>
+                Microsoft Recognition
+              </h3>
             </div>
 
-            <p className="mb-4">
-              A ZeoCare foi selecionada para o programa Microsoft for Startups Founders Hub, que apoia startups
-              inovadoras com recursos, mentoria e tecnologia de ponta.
+            <p style={{
+              fontFamily: "'Manrope', sans-serif",
+              color: "rgba(255, 255, 255, 0.6)",
+              fontSize: "0.9rem",
+              fontWeight: "400",
+              lineHeight: "1.6",
+              marginBottom: "1.5rem"
+            }}>
+              ZeoCare foi selecionada para o Microsoft for Startups Founders Hub, 
+              validando nossa inovação em IA clínica e análise dimensional da mente.
             </p>
 
-            <p className="mb-4">
-              Este credenciamento reforça nosso compromisso com a inovação e excelência tecnológica em saúde mental.
+            <p style={{
+              fontFamily: "'Manrope', sans-serif",
+              color: "rgba(255, 255, 255, 0.4)",
+              fontSize: "0.8rem",
+              fontWeight: "400",
+              lineHeight: "1.5",
+              marginBottom: "2rem"
+            }}>
+              Este credenciamento confirma nosso compromisso com excelência 
+              tecnológica em saúde mental dimensional.
             </p>
 
             <div className="flex justify-end">
               <button
-                className="px-4 py-2 bg-[#0078d4] text-white rounded hover:bg-[#006cbe]"
+                className="btn-mcp-secondary"
                 onClick={() => setIsOpen(false)}
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontSize: "0.8rem",
+                  fontWeight: "400",
+                  letterSpacing: "0.05em",
+                  textTransform: "uppercase"
+                }}
               >
-                Fechar
+                Close
               </button>
             </div>
           </div>

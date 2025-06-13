@@ -4,25 +4,13 @@ import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { ArrowDown, Play } from "lucide-react"
 import { scrollToSection } from "@/utils/smooth-scroll"
+import DimensionalMindVisualization from "./dimensional-mind-visualization"
 
 export default function HeroSectionXAI() {
   const [isLoaded, setIsLoaded] = useState(false)
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
 
   useEffect(() => {
     setIsLoaded(true)
-  }, [])
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({
-        x: (e.clientX / window.innerWidth) * 100,
-        y: (e.clientY / window.innerHeight) * 100,
-      })
-    }
-
-    window.addEventListener('mousemove', handleMouseMove)
-    return () => window.removeEventListener('mousemove', handleMouseMove)
   }, [])
 
   return (
@@ -31,38 +19,8 @@ export default function HeroSectionXAI() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       style={{background: "linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #0f0f0f 100%)"}}
     >
-      {/* Animated Background Grid */}
-      <div className="absolute inset-0 opacity-30">
-        <div 
-          className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:100px_100px]"
-          style={{
-            transform: `translate(${mousePosition.x * 0.02}px, ${mousePosition.y * 0.02}px)`
-          }}
-        />
-      </div>
-
-      {/* Floating Particles */}
-      <div className="absolute inset-0">
-        {[...Array(50)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-white rounded-full opacity-20"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -100, 0],
-              opacity: [0.2, 0.8, 0.2],
-            }}
-            transition={{
-              duration: Math.random() * 10 + 10,
-              repeat: Infinity,
-              delay: Math.random() * 5,
-            }}
-          />
-        ))}
-      </div>
+      {/* Dimensional Mind Space Visualization */}
+      <DimensionalMindVisualization />
 
       {/* Content */}
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4">

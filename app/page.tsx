@@ -1,8 +1,8 @@
 import HeaderXAI from "@/components/header-xai"
 import HeroSectionXAI from "@/components/hero-section-xai"
-import DemoSectionXAI from "@/components/demo-section-xai"
+import DimensionalDemoXAI from "@/components/dimensional-demo-xai"
 import MSRecognitionXAI from "@/components/ms-recognition-xai"
-import EconomicImpactXAI from "@/components/economic-impact-xai"
+import EconomicTransformationXAI from "@/components/economic-transformation-xai"
 import AboutXAI from "@/components/about-xai"
 import ContactXAI from "@/components/contact-xai"
 import FooterXAI from "@/components/footer-xai"
@@ -34,17 +34,17 @@ export default function Home() {
       <HeaderXAI />
 
       <main>
-        {/* 1. Hero Section: Impacto Imediato */}
+        {/* 1. Hero Section: Espaço Dimensional da Mente */}
         <HeroSectionXAI />
 
-        {/* 2. Demo Section: Experiência Interativa com Visualização Dimensional */}
-        <DemoSectionXAI />
+        {/* 2. Demo Section: Experiência Dimensional Interativa */}
+        <DimensionalDemoXAI />
 
         {/* 3. Microsoft Recognition Section: Validação e Credibilidade */}
         <MSRecognitionXAI />
 
-        {/* 4. Impacto Econômico, Automação e Qualidade de Documentação */}
-        <EconomicImpactXAI />
+        {/* 4. Transformação Econômica: Impacto Real, ROI e Qualidade de Vida */}
+        <EconomicTransformationXAI />
 
         {/* 5. About / Technology Section */}
         <AboutXAI />
