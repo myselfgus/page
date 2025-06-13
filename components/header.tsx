@@ -13,7 +13,7 @@ export default function Header() {
   const pathname = usePathname()
   const isMobile = useIsMobile()
 
-  const sections = ["home", "demo", "economic-impact", "contact"]
+  const sections = ["home", "demo"]
 
   const handleScroll = () => {
     setScrolled(window.scrollY > 50)
@@ -50,7 +50,7 @@ export default function Header() {
     <header
       className={`fixed left-0 w-full z-50 transition-all duration-500 ease-out ${
         scrolled
-          ? "py-2 md:py-3 bg-black/20 backdrop-blur-xl border-b border-white/5"
+          ? "py-2 md:py-3 bg-[#0a0a0a]/90 backdrop-blur-xl border-b border-white/5"
           : "py-4 md:py-6 bg-transparent"
       }`}
       style={{
@@ -61,52 +61,32 @@ export default function Header() {
       <div className="container mx-auto px-4 md:px-6 lg:px-8 flex justify-between items-center">
         <div className="flex items-center">
           <Link href="/" className="flex items-center space-x-2">
-            <span className="font-primary font-bold text-xl md:text-2xl tracking-[-0.03em] text-white hover:opacity-90 transition-all duration-300 hover:scale-105">
+            <span className="font-primary font-[300] text-2xl md:text-3xl tracking-[-0.05em] text-white/90 hover:text-white transition-all duration-300">
               ZEO
             </span>
           </Link>
         </div>
 
-        {/* Desktop Navigation - Enhanced spacing and interactions */}
-        <nav className="hidden md:flex items-center space-x-2 lg:space-x-4">
+        {/* Desktop Navigation - Simplified */}
+        <nav className="hidden md:flex items-center space-x-8">
           <button
-            onClick={() => {
-              scrollToSection("home")
-              setActiveSection("home")
-            }}
-            className={`px-3 py-2 text-sm font-medium relative rounded-lg transition-all duration-300 ${
-              activeSection === "home" 
-                ? "text-white bg-white/5" 
-                : "text-white/70 hover:text-white hover:bg-white/5"
-            }`}
+            onClick={() => scrollToSection("demo")}
+            className="text-white/60 hover:text-white font-[300] text-sm tracking-wide transition-colors duration-300"
           >
-            <span className="relative font-secondary font-[500] tracking-wide">
-              Home
-            </span>
+            Demo
           </button>
           <button
-            onClick={() => {
-              scrollToSection("demo")
-              setActiveSection("demo")
-            }}
-            className={`px-3 py-2 text-sm font-medium relative rounded-lg transition-all duration-300 ${
-              activeSection === "demo" 
-                ? "text-white bg-white/5" 
-                : "text-white/70 hover:text-white hover:bg-white/5"
-            }`}
+            className="px-6 py-2 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 
+                       text-white/90 hover:text-white font-[300] text-sm tracking-wide
+                       rounded-lg backdrop-blur-sm transition-all duration-300"
           >
-            <span className="relative font-secondary font-[500] tracking-wide">
-              Try Demo
-            </span>
+            Get Access
           </button>
-          <button
-            onClick={() => {
-              scrollToSection("economic-impact")
-              setActiveSection("economic-impact")
-            }}
-            className={`px-3 py-2 text-sm font-medium relative rounded-md ${
-              activeSection === "economic-impact" ? "text-brand-primary" : "text-white hover:text-brand-primary"
-            }`}
+        </nav>
+
+        {/* Mobile menu button */}
+        <div className="md:hidden">
+          <button className="text-white/60 hover:text-white transition-colors duration-300">
           >
             <span className="relative after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-0.5 after:bg-brand-primary after:transition-all after:duration-300 hover:after:w-full">
               Impacto

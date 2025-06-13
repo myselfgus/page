@@ -195,9 +195,9 @@ body {
   }
 
   body {
-    font-family: 'Manrope', sans-serif;
-    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #0f0f0f 100%);
-    color: hsl(var(--foreground));
+    font-family: 'Space Grotesk', sans-serif;
+    background: #0a0a0a;
+    color: rgba(255, 255, 255, 0.9);
     scroll-behavior: smooth;
     overflow-x: hidden;
   }
@@ -261,8 +261,9 @@ body {
   
   /* Additional typography enhancements */
   p {
-    @apply text-white/60 leading-relaxed mb-4;
+    @apply text-white/50 leading-relaxed mb-4;
     text-wrap: pretty;
+    font-weight: 300;
   }
   
   /* Improved link styles */
